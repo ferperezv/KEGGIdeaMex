@@ -1,7 +1,11 @@
-KEGGpath <- function(x){
+KEGGpath <- function(x, species, n){
+  
   #Selecting file and editing column names
   input <- read.csv(x, header=F, sep="")
   colnames(input) <- c("Gene", "DE")
+  
+  #Convert 
+  sp <- as.character(species)
   
   #Subsetting by up and down regulated
   up <- subset(input, DE == "UP")
@@ -12,8 +16,8 @@ KEGGpath <- function(x){
   down_genes <- as.vector(down$Gene)
   
   #Consulting KEGG, getting top represented pathways
-  kegg_up <- kegga(up_genes, species.KEGG ="gsu")
-  kegg_down <- kegga(down_genes, species.KEGG = "gsu")
+  kegg_up <- kegga(up_genes, species.KEGG = sp)
+  kegg_down <- kegga(down_genes, species.KEGG = sp)
   
   #Sorting by column DE, to get top pathways represented
   top_down <- kegg_down[order(-kegg_down$DE),]
@@ -26,9 +30,13 @@ KEGGpath <- function(x){
   colnames(top_up) <- c("Pathway", "N")
   
   #Get top10
-  top10_down<- top_down[1:10,]
-  top10_up<- top_up[1:10,]
+  top10_down<- top_down[1:n,]
+  top10_up<- top_up[1:n,]
   
-  return(top10_down, top10_up)
+  id <- c(rep("DOWN", n), rep("UP", n))
+  top_all <- rbind(top10_down, top10_up)
+  results <- cbind(top_all, id)
+  rownames(results) <- c()
+  return(results)
   
 }
