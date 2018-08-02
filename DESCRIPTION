@@ -1,11 +1,18 @@
 Package: KEGGIdeaMex
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Get enriched pathways from KEGG using a list of differentially expressed genes.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: 
+  Irving García
+  Lorena J. Gómez
+  Bernardo M. Quiroga
+  Francisco Pérez
+  
+Maintainer: Francisco Pérez <frpvillatoro@gmail.com>
+Description: Returns a list of enriched pathways from a list of differentially expressed genes. 
+    It also makes two graphs: one pie chart and a bar plot showing these pathways.
+    
+License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
+Depends: edgeR, ggplot2, scales, ggmap
