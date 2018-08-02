@@ -4,7 +4,7 @@
 
 This pipeline was created in the [CDSB-Mexico 2018](http://www.comunidadbioinfo.org/r-bioconductor-developers-workshop-2018/) by request of Leticia Vega and Veronica Jimenez.
 
-The pipeline takes as input a list of genes (NCBI gene Ids) diffentialy expressed and creates descriptive plots.
+The pipeline takes as input a list of genes (NCBI gene Ids) differentially expressed and creates descriptive plots.
 
 ## Input
 
@@ -31,6 +31,16 @@ Select from the KEGG database the three letter code for the species who belong t
 ### Number of pathways to plot
 
 Declare the number of pathways to plot.
+
+## Output example
+
+The package generates the next class of plots:
+
+![Ejemplo de archivo de salida numero 1](https://github.com/FRPV/KEGG_ideaMex/blob/master/output_example1.png)
+
+
+![Ejemplo de archivo de salida numero 1](https://github.com/FRPV/KEGG_ideaMex/blob/master/output_example2.png)
+
 
 ## Developers
  - Irving García
