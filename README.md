@@ -34,11 +34,12 @@ Declare the number of pathways to plot.
 
 ## Output example
 
+The package generates the next class of plots:
 
 ![Ejemplo de archivo de salida numero 1](https://github.com/FRPV/KEGG_ideaMex/blob/master/output_example1.png)
 
 
-![enter image description here](https://github.com/FRPV/KEGG_ideaMex/blob/master/output_example2.png)
+![Ejemplo de archivo de salida numero 1](https://github.com/FRPV/KEGG_ideaMex/blob/master/output_example2.png)
 
 
 ## Developers
