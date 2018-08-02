@@ -6,7 +6,7 @@ Author:
   Irving García
   Lorena J. Gómez
   Bernardo M. Quiroga
-  Francisco Pérez
+  Fernardo Pérez
   
 Maintainer: Francisco Pérez <frpvillatoro@gmail.com>
 Description: Returns a list of enriched pathways from a list of differentially expressed genes. 
