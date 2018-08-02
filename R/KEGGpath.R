@@ -2,6 +2,7 @@
 #' @import edgeR
 #' @param x A txt file with two columns: one with the Entrez Gene ID and another with the tag UP or DOWN.
 #' @param species A character string with the three letter code from KEGG specifying the organism. You can check the list here: \code{\link{https://www.kegg.jp/kegg/catalog/org_list.html}
+#' @param n An integer number indicating how many pathways per condition (UP/DOWN) the user wants. 
 #' @examples:
 #' x <- "~/de.txt"
 #' species <- "gsu"
