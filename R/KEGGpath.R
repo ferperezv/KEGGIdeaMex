@@ -4,7 +4,7 @@
 #' @import edgeR
 #' @param input A txt file with two columns: one with the Entrez Gene ID and another with the tag UP or DOWN.
 #' @param species A character string with the three letter code from KEGG specifying the organism. You can check the list here: \code{\link{https://www.kegg.jp/kegg/catalog/org_list.html}
-#' @param n An integer number indicating how many pathways per condition (UP/DOWN) the user wants. 
+#' @param n An integer number indicating how many pathways per condition (UP/DOWN) the user wants.
 #' @examples:
 #' species <- "hsa"
 #' n <- 10
@@ -13,7 +13,7 @@
 #'
 KEGGpath <- function(input, species, n){
   #Convert
-  stopifnot( colnames(input) %in% c("Genes", "DE") )
+  stopifnot( colnames(input) %in% c("Gene", "DE") )
   stopifnot(sort( levels( input$DE ) ) %in% c("DOWN", "UP"))
   sp <- as.character(species)
 
