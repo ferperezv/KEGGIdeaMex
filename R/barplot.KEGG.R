@@ -1,8 +1,9 @@
-#'  @export 
-#'  @import ggplot2 
-#'  @param results A data frame with three columns: the first column contains the names of the enriqued pathways, the second column the number of genes and the third column 
+#'  sss
+#'  @export
+#'  @import ggplot2
+#'  @param results A data frame with three columns: the first column contains the names of the enriqued pathways, the second column the number of genes and the third column
 #  specifies DOWN or UP.
-#'  @examples 
+#'  @examples
 #'  barplot.KEGG(results)
 
 
