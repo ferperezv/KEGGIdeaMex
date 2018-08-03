@@ -1,7 +1,15 @@
+#' @export
+#' @import ggplot2 dplyr ggmap scales
+#' @param res A table with the KEGG pathways that results from the function KEGGpath that indicate the genes UP and DOWN in each KEGG Pathway.
+#' @examples:
+#' pie_KEGG <- pie_KEGG(res = results)
+
 pie_KEGG <- function (res){
   res_down <- subset(results, results$id == "DOWN")
   res_up <- subset(results, results$id == "UP")
   
+  up <- res_up[c(1,2)]
+  down <- res_down [c(1,2)]
   
   ## Percentage
   tl_up <- up %>%
