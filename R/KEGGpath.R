@@ -50,20 +50,20 @@ KEGGpath <- function(x, species, n){
       top_all <- rbind(top10_down, top10_up)
       results <- cbind(top_all, id)
       rownames(results) <- c()
-      print(results)
+      return(results)
   }
   if (nrow(top10_up) > 0 && nrow(top10_down) == 0){
     id <- rep("UP", nrow(top10_up))
     top_all <- top10_up
     results <- cbind(top_all, id)
     rownames(results) <- c()
-    print(results)
+    return(results)
   }
   if (nrow(top10_up) == 0 && nrow(top10_down) > 0){
     id <- rep("DOWN", nrow(top10_up))
     top_all <- top10_down
     results <- cbind(top_all, id)
     rownames(results) <- c()
-    print(results)
+    return(results)
   }
 }
