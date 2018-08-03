@@ -1,21 +1,20 @@
+#' Main function
+#'
 #' @export
 #' @import edgeR
-#' @param x A txt file with two columns: one with the Entrez Gene ID and another with the tag UP or DOWN.
+#' @param input A txt file with two columns: one with the Entrez Gene ID and another with the tag UP or DOWN.
 #' @param species A character string with the three letter code from KEGG specifying the organism. You can check the list here: \code{\link{https://www.kegg.jp/kegg/catalog/org_list.html}
 #' @param n An integer number indicating how many pathways per condition (UP/DOWN) the user wants. 
 #' @examples:
-#' x <- "~/de.txt"
-#' species <- "gsu"
+#' species <- "hsa"
 #' n <- 10
-#' 
-#' results <- KEGGpath(x, species, n)
-
-KEGGpath <- function(x, species, n){
-  #Selecting file and editing column names
-  input <- read.csv(x, header=F, sep="")
-  colnames(input) <- c("Gene", "DE")
-
+#' data("de_df")
+#' results <- KEGGpath(de_df, species, n)
+#'
+KEGGpath <- function(input, species, n){
   #Convert
+  stopifnot( colnames(input) %in% c("Genes", "DE") )
+  stopifnot(sort( levels( input$DE ) ) %in% c("DOWN", "UP"))
   sp <- as.character(species)
 
   #Subsetting by up and down regulated
