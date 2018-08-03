@@ -1,16 +1,7 @@
-## Function Pie KEGG 
 pie_KEGG <- function (res){
-  #OUT=paste("D:/R-studio/myrepo/hola.pdf",sep="")
-  #out_dir <- path()
   res_down <- subset(results, results$id == "DOWN")
   res_up <- subset(results, results$id == "UP")
   
-  
-  up <- read.table(file = "top10_up.txt", header = T)
-  down <- read.table(file = "top10_down.txt", header = T)
-  
-  up <- res_up[c(1,2)]
-  down <- res_down [c(1,2)]
   
   ## Percentage
   tl_up <- up %>%
@@ -42,7 +33,6 @@ pie_KEGG <- function (res){
   
   # ggplot Pie Chart with percentage labels
   
-  #windows()
   pc_up <- ggplot(tl_up, aes(x = "", y = N, fill = Pathway)) +
     geom_bar(width = 1, stat = "identity") +
     coord_polar(theta = "y", start = 0) +
@@ -77,10 +67,7 @@ pie_KEGG <- function (res){
   p_down + theme (plot.title = element_text(hjust = 0.5, size = 30 ),
                   legend.title = element_text(hjust = 0.5, face="bold", size = 20),
                   legend.text = element_text(size = 18, face = "bold"))# + blank_theme +
-
-  #dev.copy(pdf,file=paste(dir,file,sep="/")) 
-  #dev.off()
-  #dev.copy2pdf(file = dir)
+  
   l <- list(p_up,p_down)
   l
 }
